@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>User Portfolio - ConnorStocks</title>
+   <link rel="stylesheet" href="Portfolio.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+ <header id="header">
+   <nav>
+       <div class="container">
+           <div class="logo">
+               <a href="searchStocks.html" class="home">ConnorStocks</a>
+           </div>
+           <div class="navigation-links">
+               <a href="searchStocks.html" class="home-search-link">Home/Search</a>
+               <a href="#" id="logoutLink">Logout</a>
+               <a href="Portfolio.html">Portfolio</a>
+           </div>
+       </div>
+   </nav>
+</header>
+   <main id="portfolioContainer">
+       <div id="portfolioDetails">
+           <p>Loading your portfolio...</p>
+       </div>
+   </main>
+   <script src="Portfolio.js"></script>
+   <script>
+       $(document).ready(function() {
+           $('#logoutLink').on('click', function(e) {
+               e.preventDefault();
+               $.ajax({
+                   type: "GET",
+                   url: "logout",
+                   success: function() {
+                       window.location.href = "LoginRegister.html"; 
+                   },
+                   error: function() {
+                       alert("Error logging out.");
+                   }
+               });
+           });
+       });
+   </script>
+</body>
+</html>
+
+

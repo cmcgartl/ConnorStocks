@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JoeStocks - Search Stocks</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="search.js"></script>
+</head>
+<body>
+    <header id="header">
+        <nav>
+            <div class="container">
+                <div class="logo">
+                    <a href="#" class="home-search-link">ConnorStocks</a>
+                </div>
+                <div class="navigation-links">
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <main id="searchContainer">
+        <h1>SEARCH STOCKS</h1>
+        <form id="searchForm">
+            <input type="text" id="searchQuery" name="searchQuery" placeholder="Search by ticker...">
+            <button type="submit">Search</button>
+        </form>
+    </main>
+    
+    <div id="stockDetails">
+        <!-- Stock details will be dynamically populated here by search.js -->
+     
+    </div>
+
+   <script>
+       /* $(document).ready(function() {
+            checkLoginStatus();  
+            $('#searchForm').submit(function(e) {
+                e.preventDefault();
+                var ticker = $('#searchQuery').val().toUpperCase();
+                const validTickers = ['TSLA', 'AAPL', 'MSFT', 'AMD', 'NVDA'];
+
+                if (validTickers.includes(ticker)) {
+                    $.ajax({
+                        type: "GET",
+                        url: "stockInfo",
+                        data: { ticker: ticker },
+                        success: function(response) {
+                            var stockData = typeof response === 'string' ? JSON.parse(response) : response;
+                            checkLoginStatus(function(isLoggedIn) {
+                                if (isLoggedIn) {
+                                    $('#stockDetails').html(generateDetailedStockHtml(stockData));
+                                } else {
+                                    $('#stockDetails').html(generateStockHtml(stockData));
+                                }
+                                $('#searchContainer').hide();
+                            });
+                        },
+                        error: function() {
+                            alert("Error retrieving stock information.");
+                        }
+                    });
+                } else {
+                    alert("Please enter a valid ticker: TSLA, AAPL, MSFT, or AMD");
+                }
+            });
+
+            $(document).on('click', '.home-search-link', function(e) {
+                e.preventDefault();
+                $('#searchContainer').show();
+                $('#stockDetails').empty();
+            });
+
+         
+            $(document).on('click', '#logoutLink', function(e) {
+                e.preventDefault();
+                $.ajax({
+                    type: "GET",
+                    url: "logout",
+                    success: function() {
+                        checkLoginStatus(); 
+                        $('#searchContainer').show();
+                        $('#stockDetails').empty();
+                    },
+                    error: function() {
+                        alert("Error logging out.");
+                    }
+                });
+            });
+        });*/
+    </script>
+</body>
+</html>

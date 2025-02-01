@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login and Registration - ConnorStocks</title>
+    <link rel="stylesheet" href="Login-register.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function() {
+
+        $('#registerForm').submit(function(e) {
+            e.preventDefault();
+            var password = $('#password').val();
+            var confirmPassword = $('#confirm_password').val();
+
+            if (password !== confirmPassword) {
+                alert('Passwords do not match. Please try again.');
+                return; 
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "register",
+                data: $(this).serialize(), 
+                success: function(response) {
+                    if(response.trim() === "Success") {
+                        alert("Registration successful. Please log in.");
+                        $('#registerForm')[0].reset(); 
+                        window.location.href = "searchStocks.html"; 
+                    } else {
+                        alert(response);
+                    }
+                },
+                error: function() {
+                    alert("Registration failed: Server error.");
+                }
+            });
+        });
+
+     
+        $('#loginForm').submit(function(e) {
+            e.preventDefault();
+            $.ajax({
+                type: "POST",
+                url: "login",
+                data: $(this).serialize(), 
+                success: function(response) {
+                    if(response.trim() === "Success") {
+                        window.location.href = "searchStocks.html"; 
+                    } else {
+                        alert(response);
+                    }
+                },
+                error: function() {
+                    alert("Login failed: Server error.");
+                }
+            });
+        });
+    });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="#">ConnorStocks</a>
+            </div>
+            <nav class="navigation-links">
+                <a href="searchStocks.html">Home</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <!-- Register Section -->
+            <div class="form-section">
+                <h2>Register</h2>
+                <form id="registerForm">
+                    <label for="username">Username:</label>
+                    <input type="text" name="username" id="username" required>
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" required>
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" id="password" required>
+                    <label for="confirm_password">Confirm Password:</label>
+                    <input type="password" id="confirm_password" required>
+                    <input type="submit" value="Register">
+                </form>
+            </div>
+            <div class="form-section">
+                <h2>Login</h2>
+                <form id="loginForm">
+                    <label for="loginUsername">Username:</label>
+                    <input type="text" name="username" id="loginUsername" required>
+                    <label for="loginPassword">Password:</label>
+                    <input type="password" name="password" id="loginPassword" required>
+                    <input type="submit" value="Login">
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
