@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="cmcgartl_CSCI201_Assignment4">
+    	
+    <wb-module deploy-name="connorstocks">
+        		
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
-        <property name="context-root" value="cmcgartl_CSCI201_Assignment4"/>
-        <property name="java-output-path" value="/cmcgartl_CSCI201_Assignment4/build/classes"/>
+        		
+        <property name="java-output-path" value="/connorstocks/build/classes"/>
+        <property name="context-root" value="connorstocks"/>
+        	
     </wb-module>
+    
 </project-modules>

@@ -1,0 +1,26 @@
+# Ignore build artifacts
+/build/
+/target/
+/bin/
+/out/
+
+# Ignore class files
+*.class
+
+# Eclipse-specific files
+.classpath
+.project
+.settings/
+.metadata/
+
+# MacOS system files
+.DS_Store
+
+# Tomcat/WTP-generated deployment files
+wtpwebapps/
+Servers/
+tmp*/
+
+# Logs and temp files
+*.log
+*.tmp

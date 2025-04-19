@@ -1,50 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-   <meta charset="UTF-8">
-   <title>User Portfolio - ConnorStocks</title>
-   <link rel="stylesheet" href="Portfolio.css">
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<meta charset="UTF-8">
+	<title>User Portfolio - ConnorStocks</title>
+
+	<!-- Link to external CSS file for consistent portfolio styling -->
+	<link rel="stylesheet" href="Portfolio.css">
+
+	<!-- jQuery for AJAX and DOM manipulation -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
+
 <body>
- <header id="header">
-   <nav>
-       <div class="container">
-           <div class="logo">
-               <a href="searchStocks.html" class="home">ConnorStocks</a>
-           </div>
-           <div class="navigation-links">
-               <a href="searchStocks.html" class="home-search-link">Home/Search</a>
-               <a href="#" id="logoutLink">Logout</a>
-               <a href="Portfolio.html">Portfolio</a>
-           </div>
-       </div>
-   </nav>
-</header>
-   <main id="portfolioContainer">
-       <div id="portfolioDetails">
-           <p>Loading your portfolio...</p>
-       </div>
-   </main>
-   <script src="Portfolio.js"></script>
-   <script>
-       $(document).ready(function() {
-           $('#logoutLink').on('click', function(e) {
-               e.preventDefault();
-               $.ajax({
-                   type: "GET",
-                   url: "logout",
-                   success: function() {
-                       window.location.href = "LoginRegister.html"; 
-                   },
-                   error: function() {
-                       alert("Error logging out.");
-                   }
-               });
-           });
-       });
-   </script>
+
+	<!-- Header section for navigation across app pages -->
+	<header id="header">
+		<nav>
+			<div class="container">
+				<!-- Brand logo redirects to home/search -->
+				<div class="logo">
+					<a href="searchStocks.html" class="home">ConnorStocks</a>
+				</div>
+
+				<!-- Navigation bar links for user flow -->
+				<div class="navigation-links">
+					<a href="searchStocks.html" class="home-search-link">Home/Search</a>
+					<a href="#" id="logoutLink">Logout</a>
+					<a href="Portfolio.html">Portfolio</a> <!-- Refreshes/reloads the page -->
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<!-- Main section where user-specific portfolio details will be loaded dynamically -->
+	<main id="portfolioContainer">
+		<div id="portfolioDetails">
+			<!-- Placeholder content shown while portfolio is loading -->
+			<p>Loading your portfolio...</p>
+		</div>
+	</main>
+
+	<!-- External script to dynamically fetch and render portfolio data -->
+	<script src="Portfolio.js"></script>
+
+	<!-- Embedded logout functionality using jQuery -->
+	<script>
+		$(document).ready(function () {
+			// Handle logout link click via AJAX
+			$('#logoutLink').on('click', function (e) {
+				e.preventDefault();
+				$.ajax({
+					type: "GET",
+					url: "logout", // Calls LogoutServlet to invalidate session
+					success: function () {
+						window.location.href = "LoginRegister.html"; // Redirect to login screen
+					},
+					error: function () {
+						alert("Error logging out."); // Handles any server-side failure
+					}
+				});
+			});
+		});
+	</script>
 </body>
+
 </html>
-
-
