@@ -3,7 +3,7 @@ ConnorStocks is a mock stock trading dynamic web application that allows users t
 
 **Features**
 
--Real-Time Stock Data: Allows users to search for stock tickers and Fetches/displays stock information dynamically.
+-Real-Time Stock Data: Allows users to search for stock tickers and Fetches real time stock information dynamically.
 
 -User Portfolio Management: Allows users to track, buy, and sell the stocks the they own all from one portfolio page.
 
@@ -41,19 +41,13 @@ Database Integration: Uses MySQL for storing user authentication, portfolio, and
 
 -Import the project into Eclipse (or any Java IDE supporting web applications).
 
--Configure MySQL database and update database credentials in the dbConfig file.
+-Configure MySQL database.
+
+-Update database credentials and Finnhub API key with your personal information.
 
 -Deploy the application on Tomcat.
 
-**Database Schema**
 
--The application uses a MySQL database with key tables:
-
--users (id, username, password, email)
-
--stocks (id, symbol, name, price, date)
-
--portfolio (user_id, stock_id, quantity, purchase_price)
 
 
 
