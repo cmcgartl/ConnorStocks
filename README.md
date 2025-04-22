@@ -1,51 +1,53 @@
-**Overview**
+# ConnorStocks: Stock Trading Dynamic Web Application
+
+## Overview:
 ConnorStocks is a mock stock trading dynamic web application that allows users to buy and sell stocks as well as manage a portfolio based on realtime data from Finnhub API. Using Java, JavaScript, HTML, CSS, MySQL, and Tomcat, the web app provides a well designed and fun mock trading experience.
 
-**Features**
+## Features:
 
--Real-Time Stock Data: Allows users to search for stock tickers and Fetches real time stock information dynamically.
+- Real-Time Stock Data: Allows users to search for stock tickers and Fetches real time stock information dynamically.
 
--User Portfolio Management: Allows users to track, buy, and sell the stocks the they own all from one portfolio page.
+- User Portfolio Management: Allows users to track, buy, and sell the stocks the they own all from one portfolio page.
 
---Dynamic Web Interface: Built using JavaScript and Java Servlets for a responsive experience, with styled UI using HTML and CSS
+- Dynamic Web Interface: Built using JavaScript and Java Servlets for a responsive experience, with styled UI using HTML and CSS
 
-Database Integration: Uses MySQL for storing user authentication, portfolio, and stock info.
+- Database Integration: Uses MySQL for storing user authentication, portfolio, and stock info.
 
--Secure Authentication: Implements login/logout functionality with session management.
+- Secure Authentication: Implements login/logout functionality with session management.
 
-**Tech Stack**
+## Tech Stack:
 
--Backend: Java, Tomcat, Servlets, JDBC
+- Backend: Java, Tomcat, Servlets, JDBC
 
--Frontend: HTML, CSS, JavaScript,
+- Frontend: HTML, CSS, JavaScript,
 
--Database: MySQL
+- Database: MySQL
 
-**Installation & Setup**
+# Installation & Setup:
 
-**Prerequisites**
+## Prerequisites:
 
--Java Development Kit (JDK) installed
+- Java Development Kit (JDK) installed
 
--Apache Tomcat Server configured
+- Apache Tomcat Server configured
 
--MySQL Database set up
+- MySQL Database set up
 
--Git installed (optional, for version control)
+- Git installed (optional, for version control)
 
-**Steps to Run**
+## Steps to Run
 
--Clone the repository:
+- Clone the repository:
 
--git clone https://github.com/your-repo/JoeStocks.git
+- git clone https://github.com/your-repo/JoeStocks.git
 
--Import the project into Eclipse (or any Java IDE supporting web applications).
+- Import the project into Eclipse (or any Java IDE supporting web applications).
 
--Configure MySQL database.
+- Configure MySQL database.
 
--Update database credentials and Finnhub API key with your personal information.
+- Update database credentials and Finnhub API key with your personal information.
 
--Deploy the application on Tomcat.
+- Deploy the application on Tomcat.
 
 
 
